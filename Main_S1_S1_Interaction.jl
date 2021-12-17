@@ -14,7 +14,7 @@ include("section_Parameters.jl") # Parameters
 ### Define saving address
 function func_save(x,y)	# value, name
 	printstyled("Saving data ... "; color = :green);println(" ")
-	address = join(["/Users/Lyint_Shi/Documents/JuliaLearning/Julia_s1_s1_interaction/",y,".tsv"])
+	address = join([y,".tsv"]) #["Path",y,".tsv"]
 	f=open(address,"w")
 	writedlm(f,x,'\t')
 	close(f)
@@ -67,8 +67,8 @@ func_save(data,"Energy_Level");
 data = [J[1,1,:] Energy.-Energy[:,1]];
 func_save(data,"Excitation_Energy");
 
-### Plot
-include("section_Plot.jl") 
+# ### Plot
+# include("section_Plot.jl") 
 
 ### Clear
 J, psi, data, ee, H_spin, H_int, H, Energy, E,= 0,0,0,0,0,0,0,0,0;
